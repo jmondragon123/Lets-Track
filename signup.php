@@ -63,7 +63,7 @@
          <input type="submit" name="register" value="Sign-up">
          <div>
            <span>Already have an account?</span>
-           <a  href="index.php">Login</a>
+           <a  href="index">Login</a>
          </div>
        </form>
     </div>
