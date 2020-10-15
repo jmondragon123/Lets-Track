@@ -35,7 +35,7 @@
               <input type="submit" name="login-submit" value="Login">
               <div>
                 <span>Don't have an account?</span>
-                <a  href="signup.php">Sign-up</a>
+                <a  href="signup">Sign-up</a>
               </div>
 
             </form>
@@ -46,7 +46,7 @@
     <!-- This redirects to the portal page if a user is logged in -->
     <?php
     if (isset($_SESSION['userID'])) {
-     header("Location: portal/portal.php");
+     header("Location: portal/portal");
     }
     ?>
 
