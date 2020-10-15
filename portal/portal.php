@@ -14,7 +14,7 @@
 
   <div class="sidebar">
     <div>
-      <a class="new-bug-button" href="newbug.php">New Bug</a>
+      <a class="new-bug-button" href="newbug">New Bug</a>
     </div>
 
   </div>
