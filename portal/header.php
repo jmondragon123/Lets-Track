@@ -15,10 +15,10 @@
       <div>
       <nav>
         <ul class="left-form">
-          <li><a href="portal.php">Home</a></li>
-          <li><a href="open.php">Open</a></li>
-          <li><a href="onhold.php">On Hold</a></li>
-          <li><a href="closed.php">Closed</a></li>
+          <li><a href="portal">Home</a></li>
+          <li><a href="open">Open</a></li>
+          <li><a href="onhold">On Hold</a></li>
+          <li><a href="closed">Closed</a></li>
 
         </ul>
         <ul class="right-form">
@@ -38,7 +38,7 @@
 
      <?php
      if (!isset($_SESSION['userID'])) {
-       header("Location: ../index.php");
+       header("Location: ../index");
      }
      ?>
     </header>
