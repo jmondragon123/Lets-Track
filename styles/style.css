@@ -1,0 +1,195 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* My Code */
+
+body {
+  background: #f3f3f3;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+}
+
+
+.login-form-content {
+  background: white;
+  color: #333;
+  max-width: 600px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.7rem;
+  color: red;
+}
+.success {
+  text-align: center;
+  font-size: 1.7rem;
+  color: green;
+}
+
+
+
+main div div h1 {
+  font-size: 4.5rem;
+  width: 100%;
+  text-align: center;
+  margin:0px 0px 15px;
+}
+main div div form label {
+  font-size: 1.3rem;
+  display: block;
+  padding: .5rem 0rem .0.3125rem;
+
+}
+main div div form input[type=text],input[type=password]{
+  width: 100%;
+  max-width: 400px;
+  padding: 5px;
+  margin-bottom: 35px;
+  height: 30px;
+  max-height: 30px;
+  font-size: 1rem;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+main div div form input[type=submit]{
+  background: #333;
+  color: #f3f3f3;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  display: block;
+  padding: 20px;
+  margin: 5px 0;
+}
+main div div form input[type=submit]:hover{
+  background: #00aeef;
+}
+
+main div div form div {
+  float: right;
+}
+main div div form div a {
+  text-decoration: none;
+  padding: 5px 5px 0;
+
+}
+main div div form div a:visited{
+color: inherit;
+}
+
+main div div form div a:hover{
+  color: #00aeef;
+  border-bottom: 1px solid #333;
+}
