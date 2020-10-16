@@ -103,6 +103,8 @@ input, select {
 
 /* My Code */
 
+
+
 body {
   background: #f3f3f3;
   color: #333;
@@ -211,7 +213,6 @@ header div nav ul li a:hover {
 
 .sidebar {
   width: 15%;
-
   display: flex;
   justify-content: center;
 }
@@ -236,4 +237,20 @@ header div nav ul li a:hover {
 
 .new-bug-button:hover {
   background: #00aeef;
+}
+
+.newbugcont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.newbug-container {
+  background: white;
+  color: #333;
+  max-width: 600px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 10px;
 }
