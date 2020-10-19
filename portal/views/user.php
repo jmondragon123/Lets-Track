@@ -18,7 +18,7 @@ else {
   while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>
     <th>'.$row["bugId"].'</th>
-    <th>'.$row['bugName'].'</th>
+    <th> <a href=viewbug?bugid='.$row["bugId"].'>'.$row['bugName'].'</a></th>
     <th>'.$row['bugCreatedBy'].'</th>
     <th>'.$row['bugCreatedDate'].'</th>
     <th>'.$row['stateName'].'</th>
