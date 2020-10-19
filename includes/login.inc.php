@@ -32,6 +32,7 @@ if (isset($_POST['login-submit'])) {
           $_SESSION['userID'] = $row['idUsers'];
           $_SESSION['userUID'] = $row['uidUsers'];
           $_SESSION['userGroups'] = $row['userGroup'];
+          $_SESSION['expire'] = time() + 30*60;
           header("Location: ../index.php?login=success");
           exit();
         }
