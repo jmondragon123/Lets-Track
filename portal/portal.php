@@ -14,9 +14,11 @@
 
   <div class="sidebar">
     <div>
-      <a class="new-bug-button" href="newbug">New Bug</a>
+      <a class="sidebar-button" href="newbug">New Bug</a>
     </div>
-
+    <div>
+      <a class="sidebar-button" href="newuser">New User</a>
+    </div>
   </div>
 
    </section>
