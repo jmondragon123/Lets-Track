@@ -16,9 +16,14 @@
     <div>
       <a class="sidebar-button" href="newbug">New Bug</a>
     </div>
-    <div>
-      <a class="sidebar-button" href="newuser">New User</a>
-    </div>
+    <?php
+      $group = $_SESSION['userGroups'];
+      if ($group == "1") {
+        echo '<div>
+          <a class="sidebar-button" href="newuser">New User</a>
+        </div>';
+      }
+    ?>
   </div>
 
    </section>
