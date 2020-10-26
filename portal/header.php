@@ -1,6 +1,7 @@
 <?php
   session_start();
   include_once '../includes/dbh.inc.php';
+  include_once '../includes/functions.php';
  ?>
  <?php  if(time() > $_SESSION['expire']){
    session_destroy();
@@ -18,7 +19,7 @@
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type = "text/css" href = "../styles/portalstyles.css">
-     <script src="../scripts/myscripts.js"></script> 
+     <script src="../scripts/myscripts.js"></script>
     <title>Let's Track</title>
   </head>
   <body>

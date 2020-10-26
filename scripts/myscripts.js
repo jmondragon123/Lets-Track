@@ -7,7 +7,5 @@ function changepwd_changed(changepwdCheckBox){
         //Otherwise, disable the input fields.
         document.getElementById("newpwd").disabled = true;
         document.getElementById("confirmpwd").disabled = true;
-        document.getElementById("confirmpwd").innerHTML = "";
-        document.getElementById("newpwd").innerHTML = "";
     }
 }
