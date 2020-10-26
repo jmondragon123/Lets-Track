@@ -1,13 +1,12 @@
 <?php
 
 if (!isset($_POST['savechanges'])) {
-  header("Location: ../portal/user");
+  header("Location: ../portal/portal");
   exit();
 }
 else {
   require 'dbh.inc.php';
 
-  // $username = $_POST['username'];
   $email = $_POST['email'];
   $group= $_POST['group'];
   $userID = $_POST['id'];
