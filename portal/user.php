@@ -3,8 +3,8 @@
  ?>
 
  <main>
-   <div class="newUsers">
-     <div class="userForm">
+   <div class="container">
+     <div class="cont-info">
    <?php
      if (isset($_GET['error'])) {
        if ($_GET['error'] == "emptyfields") {
@@ -42,19 +42,18 @@
          }
          else {
            $row = mysqli_fetch_assoc($result);
-           echo '
-            <input type="hidden" name="id" value="'.$useId.'">
-            <div class="title">
-             <label> '.$row['uidUsers'].'</label> <br>
+           echo '<input type="hidden" name="id" value="'.$useId.'">
+              <div class="title">
+                <label> '.$row['uidUsers'].'</label> <br>
+              </div>
+              <div class="fields jc-space-between">
+                <label class="div-title"> E-mail</label>
+                <input class="div-small-input" type="text" name="email" value="'.$row['emailUsers'].'">
              </div>
-             <div class="showEmail">
-             <label> E-mail</label>
-             <input type="text" name="email" value="'.$row['emailUsers'].'"><br>
-             </div>
-             <div class="groupSlct">
-             <label> Group</label>';
+             <div class="fields jc-space-between">
+              <label class="div-title"> Group</label>';
 
-             echo '<select name="group" form="modifyuser">';
+              echo '<select class="div-selected" name="group" form="modifyuser">';
                $sql2 = "SELECT groupName FROM groups;";
                $result2 = mysqli_query($conn, $sql2);
                $resultsCheck2 = mysqli_num_rows($result2);
@@ -71,7 +70,7 @@
                    }
                  }
                }
-             echo '</select>
+               echo '</select>
                     </div>
                     <hr>';
 
@@ -84,18 +83,20 @@
        exit();
      }
       ?>
-        <div class="passwordChange">
-        <input type="checkbox" id="changepwd" name="changepwd" value="1" onclick="changepwd_changed(this)"/>
-        <label for="changepwd">Change password?</label>
-        <br>
-        <label> New password</label>
-        <input type="password" name="newpwd" id="newpwd" disabled>
-        <br>
-        <label> Confirm password</label>
-        <input type="password" name="confirmpwd" id="confirmpwd"disabled><br>
+        <div class="fields">
+          <input type="checkbox" id="changepwd" name="changepwd" value="1" onclick="changepwd_changed(this)"/>
+          <label class="div-title" for="changepwd">Change password?</label>
+      </div>
+      <div class="fields jc-space-between">
+            <label class="div-title"> New password</label>
+            <input type="password" name="newpwd" id="newpwd" disabled>
+          </div>
+          <div class="fields jc-space-between">
+          <label class="div-title"> Confirm password</label>
+          <input type="password" name="confirmpwd" id="confirmpwd"disabled>
         </div>
-        <div class="submitChanges">
-        <input type="submit" name="savechanges" value="Save Changes">
+        <div class="fields jc-end">
+        <input class="form-buttons" type="submit" name="savechanges" value="Save Changes">
       </div>
     </form>
     </div>

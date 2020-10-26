@@ -3,67 +3,79 @@
   ?>
 
  <main>
-   <div class="newbugcont">
-     <div class="newbug-container">
-       <h1 class="bugmaker">Bug Maker</h1>
+   <div class="container">
+     <div class="cont-info">
+       <h1 class="title">Bug Maker</h1>
        <form action="../includes/newbug.inc.php" method="post" id="newbug">
-         <label>Name</label>
-         <?php
-          if (isset($_GET['name'])) {
-            $name = $_GET['name'];
-            echo '<input type="text" class="buginput" name="bugName" value="'.$name.'">';
-          }
-          else {
-            echo '<input type="text" class="buginput" name="bugName" placeholder="Bug Name">';
-          }
-          ?>
-        <label>Description</label>
-        <?php
-          if (isset($_GET['desc'])) {
-            $desc = $_GET['desc'];
-            echo '<textarea name="bugDescription" class="buginput description" value="'.$desc.'"> </textarea>';
-          }
-          else {
-            echo '<textarea type="text" name="bugDescription" class="buginput description" placeholder="Bug description"> </textarea>';
-          }
-        ?>
-        <label> Created By</label>
-        <?php
-        echo '<select name="createdby" form="newbug">
-        <option value="none" selected disabled hidden>Select a user</option>';
-        $sql = "SELECT `uidUsers` FROM `users`;";
-        $result = mysqli_query($conn, $sql);
-        $resultsCheck = mysqli_num_rows($result);
-        if (!$resultsCheck > 0) {
-          echo "Could not locate users";
-        }
-        else {
-          while ($row = mysqli_fetch_assoc($result)) {
-            echo '<option value ='.$row["uidUsers"].'>'.$row["uidUsers"].'</option>';
-          }
-        }
-
-        echo "</select>";
-        ?>
-        <label> Assigned to</label>
-        <?php
-          echo '<select name="assignedTo" form="newbug">
-          <option value="none" selected disabled hidden>Select a user</option>';
-          $sql = "SELECT `uidUsers` FROM `users`;";
-          $result = mysqli_query($conn, $sql);
-          $resultsCheck = mysqli_num_rows($result);
-          if (!$resultsCheck > 0) {
-            echo "Could not locate users";
-          }
-          else {
-            while ($row = mysqli_fetch_assoc($result)) {
-              echo '<option value ='.$row["uidUsers"].'>'.$row["uidUsers"].'</option>';
+         <div class="fields jc-space-between">
+           <label class="div-title">Name</label>
+           <?php
+            if (isset($_GET['name'])) {
+              $name = $_GET['name'];
+              echo '<input class="div-small-input" type="text" class="buginput" name="bugName" value="'.$name.'">';
             }
-          }
-          echo "</select> <br>";
-        ?>
+            else {
+              echo '<input class="div-small-input" type="text" class="buginput" name="bugName" placeholder="Bug Name">';
+            }
+          ?>
+        </div>
+        <div class="fields jc-space-between">
+          <label class="div-title" >Description</label>
+          <?php
+            if (isset($_GET['desc'])) {
+              $desc = $_GET['desc'];
+              echo '<textarea class="div-big-input" name="bugDescription" class="buginput description" >'.$desc.'</textarea>';
+            }
+            else {
+              echo '<textarea class="div-big-input" type="text" name="bugDescription" class="buginput description" placeholder="Bug description"> </textarea>';
+            }
+          ?>
+        </div>
+        <?php
+        echo "<div class='fields jc-space-between'>
+                <label class='div-title'>Created by</label>
 
-      <input type="submit"name="submit-newbug" value="Create new bug">
+              <select class='div-selected' name='assignedTo' form='newbug'>
+                <option value='none' selected disabled hidden>Select a user</option>'
+              ";
+        $result = getUsers();
+        $assignTo = getUserName($row['bugAssignedTo']);
+        while ($rows = mysqli_fetch_assoc($result)) {
+          if ($assignTo == $rows["uidUsers"] ){
+            echo '<option selected value="'.$rows["uidUsers"].'">'.$rows["uidUsers"].'</option>';
+          }
+          else {
+            echo '<option value="'. $rows["uidUsers"] .'">'.$rows["uidUsers"].'</option>';
+          }
+        }
+        echo "</select>
+        </div>";
+
+         ?>
+         <?php
+         echo "<div class='fields jc-space-between'>
+                 <label class='div-title'>Assigned to</label>
+
+               <select class='div-selected' name='assignedTo' form='newbug'>
+                 <option value='none' selected>None</option>
+               ";
+         $result = getUsers();
+         $assignTo = getUserName($row['bugAssignedTo']);
+         while ($rows = mysqli_fetch_assoc($result)) {
+           if ($assignTo == $rows["uidUsers"] ){
+             echo '<option selected value="'.$rows["uidUsers"].'">'.$rows["uidUsers"].'</option>';
+           }
+           else {
+             echo '<option value="'. $rows["uidUsers"] .'">'.$rows["uidUsers"].'</option>';
+           }
+         }
+         echo "</select>
+         </div>";
+
+          ?>
+        <div class="fields jc-end">
+            <input class="form-buttons" type="submit"name="submit-newbug" value="Create new bug">
+        </div>
       </form>
       <div class="error">
       <?php
