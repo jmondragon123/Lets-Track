@@ -6,10 +6,11 @@ if (!isset($_POST['submit-newbug'])) {
 }
 else {
   require 'dbh.inc.php';
+  require 'functions.php';
   $bugName = $_POST['bugName'];
   $bugDescription = $_POST['bugDescription'];
-  $bugCreatedBy = $_POST['createdby'];
-  $bugAssignedTo = $_POST['assignedTo'];
+  $bugCreatedBy = getUserId($_POST['createdby']);
+  $bugAssignedTo = getUserId($_POST['assignedTo']);
 
   if (empty($bugName) || empty($bugDescription) || empty($bugCreatedBy)) {
     header("Location: ../portal/newbug?error=emptyfields&name=".$bugName."&desc=".$bugDescription);
@@ -23,7 +24,7 @@ else {
       exit();
     }
     else {
-      mysqli_stmt_bind_param($stmt, "ssss", $bugName, $bugDescription, $bugCreatedBy, $bugAssignedTo);
+      mysqli_stmt_bind_param($stmt, "ssii", $bugName, $bugDescription, $bugCreatedBy, $bugAssignedTo);
       mysqli_stmt_execute($stmt);
       header("Location: ../portal/newbug?creation=success");
       exit();
