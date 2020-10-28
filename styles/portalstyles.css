@@ -224,35 +224,6 @@ header div nav ul li a:hover {
   color: #00aeef;
 }
 
-.sidebar {
-  width: 15vw;
-  display: block;
-  justify-content: center;
-}
-
-.sidebar div {
-  width: 100%;
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.sidebar-button {
-  color: #f3f3f3;
-  background: #333;
-  font-size: 1.25rem;
-  text-decoration: none;
-  width: 100%;
-  height: 40px;
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.sidebar-button:hover {
-  background: #00aeef;
-}
-
 .error {
   text-align: center;
   font-size: 1.7rem;

@@ -28,9 +28,14 @@ else {
       <nav>
         <ul class="left-form">
           <li><a href="agent">Home</a></li>
-          <li><a href="open">Open</a></li>
-          <li><a href="progress">In progress</a></li>
-          <li><a href="closed">Closed</a></li>
+          <li><a href="newbug">New Bug</a></li>
+          <?php
+              $group = $_SESSION['userGroups'];
+              if ($group == "1") {
+                echo '<li><a href="newuser">New User</a></li>';
+                echo '<li><a href="removeuser">Remove User</a></li>';
+          }
+    ?>
 
         </ul>
         <ul class="right-form">
