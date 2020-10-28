@@ -1,17 +1,12 @@
 <?php
   require "header.php"
- ?>
+  ?>
 
- <main>
-   <section class="information-view">
-         <?php
-         include "views/user.php";
-         ?>
+<main>
 
-   </section>
 </main>
 
 
- <?php
-   require "footer.php"
-  ?>
+<?php
+  require "footer.php"
+?>
