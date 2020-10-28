@@ -1,5 +1,10 @@
 <?php
-  require "header.php"
+  require "header.php";
+  $group = $_SESSION['userGroups'];
+    if ($group !== 1) {
+      header("Location: agent");
+      exit();
+    }
 ?>
 <main>
   <div class="container">
