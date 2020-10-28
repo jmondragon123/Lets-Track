@@ -34,7 +34,7 @@
       }
         ?>
 
-      <form class="login" action="../includes/newuser.inc.php" method="post">
+      <form class="login" action="../includes/newuser.inc.php" id="newuser" method="post">
       <div class="fields jc-space-between"> 
         <label class="div-title">Username</label>
           <?php
@@ -60,6 +60,22 @@
           ?>
       </div>
       <div class="fields jc-space-between">
+        <label class="div-title"> Group</label>
+        <select class="div-selected" name="group" form="newuser">
+        <?php
+        $resultGroups = getGroups();
+        while ($rowGroup = mysqli_fetch_assoc($resultGroups)) {
+          if ( $rowGroup["groupName"] == "User"){
+            echo '<option value ='.$rowGroup["groupName"].' selected>'.$rowGroup["groupName"].'</option>';
+          }
+          else {
+            echo '<option value ='.$rowGroup["groupName"].'>'.$rowGroup["groupName"].'</option>';
+          }
+        }
+        ?>
+        </select>
+      </div>
+      <div class="fields jc-space-between">
         <label class="div-title">Password</label>
         <input class="div-small-input" type="password" name="pwd">
       </div>
@@ -67,6 +83,8 @@
         <label class="div-title">Confirm password</label>
         <input class="div-small-input" type="password" name="confirmpwd">
       </div>
+
+
       <div class="fields jc-end">
         <input class="form-buttons" type="submit" name="register" value="Sign-up">
       </form>
