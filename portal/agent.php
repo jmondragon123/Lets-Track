@@ -7,7 +7,9 @@
         <?php
         $group = $_SESSION['userGroups'];
         if ($group == "1") {
-          echo '<div class="user-view">';
+          $result = getUsersTable($_SESSION['userID']);
+          if($result != "-1"){
+              echo '<div class="user-view">';
             echo '<table class="users-Table">
             <tr>
               <th>Username</th>
@@ -15,8 +17,6 @@
               <th>User Group</th>
               <th>Delete</th>
             </tr>';
-
-            $result = getUsersTable($_SESSION['userID']);
             while ($row = mysqli_fetch_assoc($result)) {
 
               echo '<tr>
@@ -29,9 +29,13 @@
 
             echo "</table>";
             echo '</div>';
-
+          }
         }
-        echo '<div class="user-view">
+        
+        
+        $result = getBugsTable();
+        if($result != "-1"){
+          echo '<div class="user-view">
         <table class="users-Table">
         <tr>
           <th>ID</th>
@@ -40,18 +44,18 @@
           <th>Created Date</th>
           <th>Bug State</th>
         </tr>';
-        $result = getBugsTable();
-        while ($row = mysqli_fetch_assoc($result)) {
-          echo '<tr>
-          <th>'.$row["bugId"].'</th>
-          <th> <a href=viewbug?bugid='.$row["bugId"].'>'.$row['bugName'].'</a></th>
-          <th>'.$row['uidUsers'].'</th>
-          <th>'.$row['bugCreatedDate'].'</th>
-          <th>'.$row['stateName'].'</th>
-          </tr>';
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo '<tr>
+            <th>'.$row["bugId"].'</th>
+            <th> <a href=viewbug?bugid='.$row["bugId"].'>'.$row['bugName'].'</a></th>
+            <th>'.$row['uidUsers'].'</th>
+            <th>'.$row['bugCreatedDate'].'</th>
+            <th>'.$row['stateName'].'</th>
+            </tr>';
+          }
+            echo "  </table>
+                  </div>";
         }
-          echo "  </table>
-                </div>";
         ?>
 
   </section>

@@ -128,6 +128,20 @@ function getStateId($state) {
   }
 }
 
+function getStateName($stateId) {
+  require 'dbh.inc.php';
+  $sql = "SELECT stateName FROM state WHERE stateID='$stateId';";
+  $result = mysqli_query($conn, $sql);
+  $resultsCheck = mysqli_num_rows($result);
+  if (!$resultsCheck > 0) {
+    echo "Could not locate user: ".$state;
+  }
+  else {
+    $row = mysqli_fetch_assoc($result);
+    return $row['stateName'];
+  }
+}
+
 function getComments($bugID) {
   require 'dbh.inc.php';
   $sql = "SELECT comments.commentId, users.uidUsers, comments.commentContext,
@@ -158,7 +172,7 @@ function getUsersTable($userID) {
   $result = mysqli_query($conn, $sql);
   $resultsCheck = mysqli_num_rows($result);
   if (!$resultsCheck > 0) {
-  echo "No data found";
+    return "-1";
   }
   else {
     return $result;
@@ -174,7 +188,7 @@ function getBugsTable() {
   $result = mysqli_query($conn, $sql);
   $resultsCheck = mysqli_num_rows($result);
   if (!$resultsCheck > 0) {
-    echo "No data found";
+    return "-1";
   }
   else {
     return $result;
@@ -196,4 +210,20 @@ function getBugsTableAssigned($userID) {
   else {
     return $result;
   }
+}
+
+function bugChangesAddComment($name, $comments, $bugID){
+  require 'dbh.inc.php';
+  $sql = "INSERT INTO comments(commentCreatedBy,commentContext,commentBugId) VALUES (?,?,?)";
+  $stmt = mysqli_stmt_init($conn);
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("Location: ../portal/viewbug?bugid=".$bugID."&error=sqlerror");
+    exit();
+  }
+  else {
+    mysqli_stmt_bind_param($stmt, "isi", $name,$comments,$bugID);
+    mysqli_stmt_execute($stmt);
+  }
+  mysqli_stmt_close($stmt);
+  mysqli_close($conn);
 }
