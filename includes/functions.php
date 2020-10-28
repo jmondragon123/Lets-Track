@@ -180,3 +180,20 @@ function getBugsTable() {
     return $result;
   }
 }
+
+function getBugsTableAssigned($userID) {
+  require 'dbh.inc.php';
+  $sql = "SELECT bugId, bugName, users.uidUsers, DATE_FORMAT(bugCreatedDate, '%m/%d/%Y') AS 'bugCreatedDate', state.stateName
+        FROM bugs
+        INNER JOIN state ON bugs.bugState = state.stateID
+        INNER JOIN users ON bugs.bugCreatedBy = users.idUsers
+        WHERE bugAssignedTo = '$userID';";
+  $result = mysqli_query($conn, $sql);
+  $resultsCheck = mysqli_num_rows($result);
+  if (!$resultsCheck > 0) {
+    return "-1";
+  }
+  else {
+    return $result;
+  }
+}

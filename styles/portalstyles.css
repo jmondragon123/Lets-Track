@@ -370,8 +370,13 @@ header div nav ul li a:hover {
   width: 20vw;
   padding-top: 5px;
 }
+
 .border {
   border: 1px solid;
   padding: 15px;
   border-radius: 15px;
+}
+
+.t-margin {
+  margin-top: 15px;
 }
