@@ -1,14 +1,14 @@
 <?php
   require "header.php"
- ?>
+?>
 
- <main>
-   <div class="container">
-     <div class="cont-info">
+<main>
+  <div class="container">
+    <div class="cont-info">
         <form id="savechanges" action="../includes/modifybug.inc.php" method="post">
-         <?php
-         $bugID = $_GET['bugid'];
-         $userName = $_SESSION['userUID'];
+        <?php
+        $bugID = $_GET['bugid'];
+        $userName = $_SESSION['userUID'];
           echo '<input type="hidden" name="id" value="'.$bugID.'">';
           echo '<input type="hidden" name="name" value="'.$userName.'">';
           if (isset($_GET['bugid'])) {
@@ -120,12 +120,12 @@
           }
           echo "</div>";
         }
-         ?>
+        ?>
     </div>
   </div>
 
 </main>
 
- <?php
-   require "footer.php"
+<?php
+  require "footer.php"
   ?>

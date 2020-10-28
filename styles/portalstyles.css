@@ -177,6 +177,7 @@ header div nav ul li a:hover {
 .upper {
   text-transform: capitalize;
 }
+
 .disp-user {
   color: #f3f3f3;
   font-size: 1.3rem;
@@ -252,40 +253,12 @@ header div nav ul li a:hover {
   background: #00aeef;
 }
 
-.newbugcont {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  height: 50vh;
-}
-
-.newbug-container {
-  background: white;
-  color: #333;
-  max-width: 50vw;
-  width: 100%;
-  padding: 50px;
-  border-radius: 10px;
-  height: 50vh;
-}
-
-
-.blocks {
-  display: block;
-
-}
-
-
-.buginput {
-  display: block;
-}
-
-
 .error {
   text-align: center;
   font-size: 1.7rem;
   color: red;
 }
+
 .success {
   text-align: center;
   font-size: 1.7rem;
@@ -303,65 +276,6 @@ header div nav ul li a:hover {
   justify-content: center;
   margin-top: 50px;
   height: 50vh;
-}
-.userForm {
-  background: white;
-  color: #333;
-  max-width: 35vw;
-  width: 100%;
-  padding: 50px;
-  border-radius: 10px;
-  height: 375px;
-  font-size: 1.5rem;
-}
-
-
-.showEmail input[type=text]{
-  width: 250px;
-  padding: 5px;
-  font-size: 1.5rem;
-
-}
-.groupSlct {
-  margin: 10px 0px;
-}
-.groupSlct select {
-  width: 200px;
-  padding: 5px;
-  font-size: 1.2rem;
-  margin-left: 10px;
-
-}
-
-.passwordChange checkbox {
-  width: 500px;
-}
-
-.passwordChange input[type=text], input[type=password]{
-  width: 10vw;
-  padding: 5px;
-  font-size: 1rem;
-  margin: 10px 0;
-}
-
-.submitChanges{
-  padding-top: 10px;
-  text-align: center;
-}
-
-.submitChanges input[type=submit]{
-  font-size: 1.5rem;
-  background: #333;
-  color: #f3f3f3;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.submitChanges input[type=submit]:hover {
-  background: #00aeef;
 }
 
 .container {
@@ -446,41 +360,41 @@ header div nav ul li a:hover {
 }
 
 .form-buttons {
-   background: #333;
-   color: #f3f3f3;
-   font-size: 1.25rem;
-   border-radius: 20px;
-   cursor: pointer;
-   border: none;
-   padding: 10px;
-   margin: 10px 0;
-   text-transform: capitalize;
- }
+  background: #333;
+  color: #f3f3f3;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
 
- .form-buttons:hover {
-   background: #00aeef;
- }
+.form-buttons:hover {
+  background: #00aeef;
+}
 
- .fields-comments {
-   display: flex;
-   margin-bottom: 10px;
-   padding: 7px 5px;
-   border: 1px solid;
-   border-radius: 15px;
- }
+.fields-comments {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 7px 5px;
+  border: 1px solid;
+  border-radius: 15px;
+}
 
- .username {
-   width: 100%;
-   max-width: 10%;
-   font-size: 15px;
-   text-transform: capitalize;
- }
+.username {
+  width: 100%;
+  max-width: 10%;
+  font-size: 15px;
+  text-transform: capitalize;
+}
 
- .notes {
-   padding-top: 20px;
-   width: 100%;
-   text-align: left;
- }
+.notes {
+  padding-top: 20px;
+  width: 100%;
+  text-align: left;
+}
 
 .dates {
   text-align: right;

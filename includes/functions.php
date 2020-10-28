@@ -1,6 +1,4 @@
 <?php
-
-
 function getUsers() {
   require 'dbh.inc.php';
   $sql = "SELECT uidUsers FROM users;";
@@ -53,6 +51,18 @@ function getUserName($id) {
   else {
     $row = mysqli_fetch_assoc($result);
     return $row['uidUsers'];
+  }
+}
+
+function getGroups() {
+  $sql = "SELECT groupName FROM groups;";
+  $result = mysqli_query($conn, $sql);
+  $resultsCheck = mysqli_num_rows($result);
+  if (!$resultsCheck > 0) {
+  echo "Could not locate users";
+  }
+  else {
+    return $result;
   }
 }
 
