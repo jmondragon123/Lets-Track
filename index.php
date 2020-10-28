@@ -1,6 +1,6 @@
 <?php
   require "header.php"
- ?>
+?>
 
     <main>
 
@@ -25,7 +25,7 @@
                   echo "<p class='error' >Fill in all the fields!</p>";
                 }
               }
-             ?>
+            ?>
 
             <form action="includes/login.inc.php" method="post">
               <label>Username/E-mail</label>
@@ -46,10 +46,10 @@
     <!-- This redirects to the portal page if a user is logged in -->
     <?php
     if (isset($_SESSION['userID'])) {
-     header("Location: portal/portal");
+      header("Location: portal/agent");
     }
     ?>
 
- <?php
-   require "footer.php"
+<?php
+  require "footer.php"
   ?>
