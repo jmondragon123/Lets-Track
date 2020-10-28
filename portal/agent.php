@@ -13,6 +13,7 @@
               <th>Username</th>
               <th>E-mail</th>
               <th>User Group</th>
+              <th>Delete</th>
             </tr>';
 
             $result = getUsersTable($_SESSION['userID']);
@@ -22,6 +23,7 @@
               <th> <a href=viewuser?userID='.$row["idUsers"].'>'.$row["uidUsers"].'</a></th>
               <th>'.$row['emailUsers'].'</th>
               <th>'.$row['groupName'].'</th>
+              <th> <a href=removeuser?userID='.$row["idUsers"].'>X</a> </th>
               </tr>';
             }
 
