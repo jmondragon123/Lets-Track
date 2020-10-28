@@ -28,12 +28,12 @@ else {
       <nav>
         <ul class="left-form">
           <li><a href="agent">Home</a></li>
+          <li><a href="assigned">Assigned</a></li>
           <li><a href="newbug">New Bug</a></li>
           <?php
               $group = $_SESSION['userGroups'];
               if ($group == "1") {
                 echo '<li><a href="newuser">New User</a></li>';
-                echo '<li><a href="removeuser">Remove User</a></li>';
           }
     ?>
 
