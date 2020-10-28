@@ -47,7 +47,7 @@ function getUserName($id) {
   $result = mysqli_query($conn, $sql);
   $resultsCheck = mysqli_num_rows($result);
   if (!$resultsCheck > 0) {
-    echo "Could not locate user: ".$name;
+    return "-1";
   }
   else {
     $row = mysqli_fetch_assoc($result);
