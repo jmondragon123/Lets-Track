@@ -278,6 +278,20 @@ header div nav ul li a:hover {
   border-radius: 20px;
 }
 
+.title-input {
+  font-size: 3rem;
+  text-align: center;
+  margin: 5px 0px;
+  background: #333;
+  color: #f3f3f3;
+  padding: 10px 0;
+  text-transform: capitalize;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+
 .fields {
   display: flex;
   flex-wrap: wrap;
