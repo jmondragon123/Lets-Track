@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['submitnotes']) xor !isset($_POST['savechanges'])) {
-  header("Location: ../portal/portal");
+  header("Location: ../portal/agent");
   exit();
 }
 else {

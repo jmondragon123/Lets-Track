@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_POST['savechanges'])) {
-  header("Location: ../portal/portal");
+  header("Location: ../portal/agent");
   exit();
 }
 else {

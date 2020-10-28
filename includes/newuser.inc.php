@@ -1,6 +1,7 @@
 <?php
 if (!isset($_POST['register'])) {
-
+  header("Location: ../portal/agent");
+  exit();
 }
 else {
   require 'dbh.inc.php';
