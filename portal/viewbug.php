@@ -23,7 +23,7 @@
             else {
               $row = mysqli_fetch_assoc($result);
               echo "<div class='title'>
-                      <label>".$row['bugName']."</label>
+                      <input class='title-input' name='title' type='text' value='".$row['bugName']."'>
                     </div>
                     <br>
                     <div class='fields jc-space-between'>
