@@ -214,11 +214,11 @@ header div nav ul li a:hover {
 
 }
 .users-Table tr th a {
-  color: #595959;
+  color: #333
 }
 
 .users-Table tr th a:visited {
-  color: #595959;
+  color: ##333;
 }
 .users-Table tr th a:hover {
   color: #00aeef;
