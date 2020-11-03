@@ -19,39 +19,37 @@ else {
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type = "text/css" href = "../styles/portalstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../scripts/myscripts.js"></script>
     <title>Let's Track</title>
   </head>
   <body>
     <header>
-      <div>
       <nav>
-        <ul class="left-form">
-          <li><a href="agent">Home</a></li>
-          <li><a href="assigned">Assigned</a></li>
-          <li><a href="newbug">New Bug</a></li>
-          <?php
-              $group = $_SESSION['userGroups'];
-              if ($group == "1") {
-                echo '<li><a href="newuser">New User</a></li>';
-          }
-    ?>
-
-        </ul>
-        <ul class="right-form">
+        <div class="topnav" id="myTopnav">
           <?php
           if (isset($_SESSION['userID'])) {
             $usersignedin = $_SESSION['userUID'];
-              echo '<p class="upper disp-user">Welcome '.$usersignedin.' </p>';
-
+              // echo '<p>Welcome '.$usersignedin.' </p>';
+              echo '<a href="agent">Welcome '.$usersignedin.'</a>';
           }
           ?>
-          <li><form action="../includes/logout.inc.php" method="post">
+          <a href="assigned">Assigned</a>
+          <a href="newbug">New Bug</a>
+          <?php
+            $group = $_SESSION['userGroups'];
+            if ($group == "1") {
+              echo '<a href="newuser">New User</a>';
+          }
+          ?>
+          
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+          <form action="../includes/logout.inc.php" method="post">
             <input class="logout-button" type="submit" name="logout-submit" value="Logout"></button>
-          </form></li>
-        </ul>
+          </form>
+          
+        </div>
       </nav>
-    </div>
 
     <?php
     if (!isset($_SESSION['userID'])) {
